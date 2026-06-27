@@ -25,10 +25,40 @@ const logoMap = {
   ),
 };
 
-export default function Contact() {
+const content = {
+  id: {
+    eyebrow:     "// 06 — KONTAK",
+    sub:         "Saya sedang mencari kesempatan magang sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.",
+    name:        "Nama Anda",
+    email:       "Email Anda",
+    message:     "Pesan Anda..",
+    sending:     "MENGIRIM...",
+    send:        "KIRIM PESAN",
+    sendHover:   "KIRIM →",
+    cv:          "UNDUH CV",
+    success:     "✓ PESAN TERKIRIM! TERIMA KASIH.",
+    error:       "✗ GAGAL KIRIM. COBA LAGI.",
+  },
+  en: {
+    eyebrow:     "// 06 — CONTACT",
+    sub:         "I'm looking for an internship opportunity as a UI/UX Designer. If you're interested in collaborating or want to know more, feel free to reach out.",
+    name:        "Your Name",
+    email:       "Your Email",
+    message:     "Your Message..",
+    sending:     "SENDING...",
+    send:        "SEND MESSAGE",
+    sendHover:   "SEND →",
+    cv:          "DOWNLOAD CV",
+    success:     "✓ MESSAGE SENT! THANK YOU.",
+    error:       "✗ FAILED TO SEND. TRY AGAIN.",
+  },
+};
+
+export default function Contact({ lang }) {
   const ref = useReveal();
+  const t = content[lang];
   const [status, setStatus] = useState("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm]     = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -51,42 +81,36 @@ export default function Contact() {
   return (
     <section id="kontak" className="py-20">
       <div className="max-w-5xl mx-auto px-6 md:px-8">
-        <p className="font-mono text-xs tracking-widest uppercase text-tertiary mb-2">// 06 — KONTAK</p>
+        <p className="font-mono text-xs tracking-widest uppercase text-tertiary mb-2">{t.eyebrow}</p>
         <div ref={ref} className="reveal grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left */}
           <div>
             <h2 className="font-sans font-extrabold uppercase mb-8" style={{ fontSize: "clamp(2.5rem,6vw,4.5rem)", lineHeight: 0.95 }}>
               SAY<br /><span className="text-outline-red">HELLO</span>
             </h2>
-            <p className="font-sans text-base text-on-surface-variant mb-8 leading-relaxed">
-              Saya sedang mencari kesempatan magang sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.
-            </p>
+            <p className="font-sans text-base text-on-surface-variant mb-8 leading-relaxed">{t.sub}</p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input name="name" value={form.name} onChange={handleChange} required placeholder="Nama Anda" className={inputClass} />
-              <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Email Anda" className={inputClass} />
-              <textarea name="message" value={form.message} onChange={handleChange} required placeholder="Pesan Anda.." rows={5} className={inputClass + " resize-none"} />
+              <input name="name" value={form.name} onChange={handleChange} required placeholder={t.name} className={inputClass} />
+              <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder={t.email} className={inputClass} />
+              <textarea name="message" value={form.message} onChange={handleChange} required placeholder={t.message} rows={5} className={inputClass + " resize-none"} />
               <button type="submit" disabled={status === "sending"} className="group relative inline-flex items-center justify-center px-10 py-4 bg-tertiary overflow-hidden transition-all duration-300 disabled:opacity-50">
                 <span className="relative z-10 font-mono text-xs tracking-widest text-white">
-                  {status === "sending" ? "MENGIRIM..." : "KIRIM PESAN"}
+                  {status === "sending" ? t.sending : t.send}
                 </span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <span className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs tracking-widest text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">KIRIM →</span>
+                <span className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs tracking-widest text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">{t.sendHover}</span>
               </button>
-              <a
-                href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-outline-variant text-on-surface-variant font-mono text-xs tracking-widest hover:border-tertiary hover:text-tertiary transition-all duration-300"
-              >
+              <a href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF" target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-outline-variant text-on-surface-variant font-mono text-xs tracking-widest hover:border-tertiary hover:text-tertiary transition-all duration-300">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                   <polyline points="7 10 12 15 17 10"/>
                   <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
-                UNDUH CV
+                {t.cv}
               </a>
-              {status === "success" && <p className="font-mono text-xs text-green-400 tracking-widest">✓ PESAN TERKIRIM! TERIMA KASIH.</p>}
-              {status === "error" && <p className="font-mono text-xs text-red-400 tracking-widest">✗ GAGAL KIRIM. COBA LAGI.</p>}
+              {status === "success" && <p className="font-mono text-xs text-green-400 tracking-widest">{t.success}</p>}
+              {status === "error"   && <p className="font-mono text-xs text-red-400 tracking-widest">{t.error}</p>}
             </form>
           </div>
 

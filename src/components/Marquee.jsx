@@ -1,7 +1,10 @@
-const items = ["UI/UX Designer", "Figma Enthusiast", "Frontend Learner", "Problem Solver"];
-const repeated = [...items, ...items, ...items, ...items];
+const items = {
+  id: ["UI/UX Designer", "Figma Enthusiast", "Frontend Learner", "Problem Solver"],
+  en: ["UI/UX Designer", "Figma Enthusiast", "Frontend Learner", "Problem Solver"],
+};
 
-export default function Marquee() {
+export default function Marquee({ lang }) {
+  const repeated = [...items[lang], ...items[lang], ...items[lang], ...items[lang]];
   return (
     <section className="overflow-hidden py-8 border-t border-b border-outline-variant">
       <div className="animate-marquee whitespace-nowrap">

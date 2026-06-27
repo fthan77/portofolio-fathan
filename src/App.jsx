@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Cursor     from "./components/Cursor";
 import Navbar     from "./components/Navbar";
 import Hero       from "./components/Hero";
@@ -11,21 +12,23 @@ import Contact    from "./components/Contact";
 import Footer     from "./components/Footer";
 
 export default function App() {
+  const [lang, setLang] = useState("id");
+
   return (
     <div className="dark bg-background text-on-background min-h-screen">
       <Cursor />
-      <Navbar />
+      <Navbar lang={lang} setLang={setLang} />
       <main className="pt-14">
-        <Hero />
-        <Marquee />
-        <About />
-        <Skills />
-        <TechStack />
-        <Projects />
-        <Experience />
-        <Contact />
+        <Hero lang={lang} />
+        <Marquee lang={lang} />
+        <About lang={lang} />
+        <Skills lang={lang} />
+        <TechStack lang={lang} />
+        <Projects lang={lang} />
+        <Experience lang={lang} />
+        <Contact lang={lang} />
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }

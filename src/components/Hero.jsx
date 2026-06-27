@@ -1,5 +1,28 @@
 import { useEffect, useState } from "react";
-import { badges, roles } from "../data/content";
+import { badges } from "../data/content";
+
+const content = {
+  id: {
+    eyebrow: "UI/UX DESIGNER — AVAILABLE TO WORK",
+    intro: "// saya seorang",
+    roles: ["UI/UX Designer", "Visual Thinker", "Figma Enthusiast", "Frontend Learner", "Problem Solver"],
+    bio: "UI/UX Designer yang fokus menciptakan produk digital yang intuitif dan memukau secara visual — di mana estetika bertemu fungsionalitas.",
+    btnProject: "LIHAT PROYEK",
+    btnProjectHover: "LIHAT KARYA →",
+    btnContact: "HUBUNGI SAYA",
+    btnCV: "DOWNLOAD CV ↓",
+  },
+  en: {
+    eyebrow: "UI/UX DESIGNER — AVAILABLE TO WORK",
+    intro: "// I am a",
+    roles: ["UI/UX Designer", "Visual Thinker", "Figma Enthusiast", "Frontend Learner", "Problem Solver"],
+    bio: "UI/UX Designer focused on creating intuitive and visually compelling digital products — where aesthetics meets functionality.",
+    btnProject: "VIEW PROJECTS",
+    btnProjectHover: "SEE WORKS →",
+    btnContact: "CONTACT ME",
+    btnCV: "DOWNLOAD CV ↓",
+  },
+};
 
 function useTyping(words) {
   const [text, setText] = useState("");
@@ -22,19 +45,18 @@ function useTyping(words) {
   return text;
 }
 
-export default function Hero() {
-  const typed = useTyping(roles);
+export default function Hero({ lang }) {
+  const t = content[lang];
+  const typed = useTyping(t.roles);
 
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 py-20 relative overflow-hidden">
-      {/* Grid BG */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-      {/* Red accent line */}
       <div className="absolute top-0 left-[5%] w-px h-full pointer-events-none" style={{ background: "linear-gradient(to bottom,transparent,rgba(232,41,42,0.4),transparent)" }} />
 
       <div className="relative z-10 max-w-4xl">
         <p className="font-mono text-xs tracking-widest uppercase text-on-surface-variant mb-3">
-          UI/UX DESIGNER — AVAILABLE TO WORK
+          {t.eyebrow}
         </p>
 
         <h1 className="text-outline font-sans font-extrabold uppercase mb-8" style={{ fontSize: "clamp(2.2rem,8vw,6.5rem)", lineHeight: 1.0, wordBreak: "break-word", overflowWrap: "break-word" }}>
@@ -42,14 +64,12 @@ export default function Hero() {
           <span style={{ WebkitTextStroke: "1.5px #e8292a", color: "transparent" }}>FATHUR</span>OHMAN
         </h1>
 
-        {/* Typing */}
         <div className="flex items-center gap-2 mb-8 flex-wrap font-mono text-xs tracking-widest text-on-surface-variant">
-          <span>// saya seorang</span>
+          <span>{t.intro}</span>
           <span style={{ color: "#e8292a" }}>{typed}</span>
           <span className="type-cursor" />
         </div>
 
-        {/* Badges */}
         <div className="flex flex-wrap gap-2 mb-8">
           {badges.map((b, i) => (
             <span key={b.label} className="tech-badge" style={{ animationDelay: `${i * 0.07 + 0.2}s` }}>
@@ -60,24 +80,23 @@ export default function Hero() {
         </div>
 
         <p className="font-sans text-on-surface-variant text-base max-w-xl mb-10 leading-relaxed" style={{ borderLeft: "2px solid #e8292a", paddingLeft: "1.25rem" }}>
-UI/UX Designer yang fokus menciptakan produk digital yang intuitif dan memukau secara visual — di mana estetika bertemu fungsionalitas.
+          {t.bio}
         </p>
 
         <div className="flex gap-4 flex-wrap mb-20">
           <a href="#proyek" className="group relative px-10 py-4 bg-tertiary overflow-hidden transition-all duration-300">
-            <span className="relative z-10 font-mono text-xs tracking-widest text-white">LIHAT PROYEK</span>
+            <span className="relative z-10 font-mono text-xs tracking-widest text-white">{t.btnProject}</span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <span className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs tracking-widest text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIHAT KARYA →</span>
+            <span className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs tracking-widest text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">{t.btnProjectHover}</span>
           </a>
           <a href="#kontak" className="inline-flex items-center justify-center font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
-          HUBUNGI SAYA
+            {t.btnContact}
           </a>
-            <a href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
-      DOWNLOAD CV ↓
-</a>
+          <a href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
+            {t.btnCV}
+          </a>
         </div>
 
-        {/* Code Window */}
         <div className="border border-outline-variant bg-surface max-w-lg hidden md:block" style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "0.78rem" }}>
           <div className="flex items-center gap-2 px-4 py-2 border-b border-outline-variant bg-surface-high">
             <span className="w-[9px] h-[9px] rounded-full bg-[#ff5f57] inline-block" />
