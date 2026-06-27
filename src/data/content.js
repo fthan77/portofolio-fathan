@@ -20,27 +20,37 @@ export const roles = [
   'Problem Solver',
 ];
 
-export const skills = [
-  { num: '01', title: 'Figma',           desc: 'Merancang wireframe, prototipe interaktif, dan antarmuka yang bersih dan terstruktur.',                        tag: 'UI DESIGN'     },
-  { num: '02', title: 'Canva',           desc: 'Membuat aset visual, materi presentasi, dan konten desain grafis yang komunikatif.',                           tag: 'VISUAL DESIGN' },
-  { num: '03', title: 'Kerja Sama Tim',  desc: 'Berkolaborasi dalam tim yang dinamis, berkontribusi aktif dan mendengarkan perspektif.',                       tag: 'SOFT SKILL'    },
-  { num: '04', title: 'Komunikasi',      desc: 'Menyampaikan ide desain dengan jelas kepada pemangku kepentingan teknis maupun non-teknis.',                   tag: 'SOFT SKILL'    },
-  { num: '05', title: 'Adaptasi Cepat',  desc: 'Menyesuaikan diri dengan lingkungan, alat, dan tantangan baru secara cepat dan efisien.',                     tag: 'SOFT SKILL'    },
-  { num: '06', title: 'UX Thinking',     desc: 'Berpikir dari sudut pandang pengguna — setiap keputusan desain berakar pada kebutuhan nyata.',                 tag: 'UX DESIGN'     },
-];
+export const skills = {
+  id: [
+    { num: '01', title: 'Figma',              tag: 'UI Design',     desc: 'Merancang wireframe, prototipe interaktif, dan desain antarmuka yang bersih dan terstruktur.' },
+    { num: '02', title: 'Canva',              tag: 'Visual Design', desc: 'Membuat aset visual, materi presentasi, dan konten desain grafis yang komunikatif.' },
+    { num: '03', title: 'Kerja Sama Tim',     tag: 'Soft Skill',    desc: 'Berkolaborasi dalam lingkungan tim yang dinamis, berkontribusi aktif dan mendengarkan perspektif.' },
+    { num: '04', title: 'Komunikasi Efektif', tag: 'Soft Skill',    desc: 'Menyampaikan ide desain dengan jelas kepada pemangku kepentingan teknis maupun non-teknis.' },
+    { num: '05', title: 'Adaptasi Cepat',     tag: 'Soft Skill',    desc: 'Menyesuaikan diri dengan lingkungan, alat, dan tantangan baru secara cepat dan efisien.' },
+    { num: '06', title: 'UX Thinking',        tag: 'UX Design',     desc: 'Berpikir dari sudut pandang pengguna — memastikan setiap keputusan desain berakar pada kebutuhan nyata.' },
+  ],
+  en: [
+    { num: '01', title: 'Figma',              tag: 'UI Design',     desc: 'Designing wireframes, interactive prototypes, and clean, structured user interfaces.' },
+    { num: '02', title: 'Canva',              tag: 'Visual Design', desc: 'Creating visual assets, presentation materials, and communicative graphic design content.' },
+    { num: '03', title: 'Teamwork',           tag: 'Soft Skill',    desc: 'Collaborating in dynamic team environments, actively contributing and listening to perspectives.' },
+    { num: '04', title: 'Communication',      tag: 'Soft Skill',    desc: 'Clearly conveying design ideas to both technical and non-technical stakeholders.' },
+    { num: '05', title: 'Fast Adaptation',    tag: 'Soft Skill',    desc: 'Quickly adjusting to new environments, tools, and challenges efficiently.' },
+    { num: '06', title: 'UX Thinking',        tag: 'UX Design',     desc: 'Thinking from the user\'s perspective — ensuring every design decision is rooted in real needs.' },
+  ],
+};
 
 export const stack = [
-  { name: 'HTML5',    level: 'Menengah', pct: 0.65, color: '#e34f26', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS3',     level: 'Menengah', pct: 0.60, color: '#2965f1', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', level: 'Dasar', pct: 0.40, color: '#f7df1e', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'React',    level: 'Dasar',    pct: 0.30, color: '#61dafb', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Tailwind', level: 'Dasar',    pct: 0.35, color: '#38bdf8', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'Figma',    level: 'Mahir',    pct: 0.85, color: '#a259ff', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-  { name: 'Canva',    level: 'Mahir',    pct: 0.82, color: '#00c4cc', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg' },
-  { name: 'Git',      level: 'Dasar',    pct: 0.35, color: '#f05032', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  { name: 'Bootstrap',level: 'Dasar',    pct: 0.35, color: '#7952b3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-  { name: 'PHP',      level: 'Dasar',    pct: 0.30, color: '#777bb4', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-  { name: 'Laravel',  level: 'Dasar',    pct: 0.25, color: '#ff2d20', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+  { name: 'HTML5',      level: 'Menengah', pct: 0.65, color: '#e34f26', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  { name: 'CSS3',       level: 'Menengah', pct: 0.60, color: '#2965f1', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  { name: 'JavaScript', level: 'Dasar',    pct: 0.40, color: '#f7df1e', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'React',      level: 'Dasar',    pct: 0.30, color: '#61dafb', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Tailwind',   level: 'Dasar',    pct: 0.35, color: '#38bdf8', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'Figma',      level: 'Mahir',    pct: 0.85, color: '#a259ff', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+  { name: 'Canva',      level: 'Mahir',    pct: 0.82, color: '#00c4cc', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg' },
+  { name: 'Git',        level: 'Dasar',    pct: 0.35, color: '#f05032', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'Bootstrap',  level: 'Dasar',    pct: 0.35, color: '#7952b3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+  { name: 'PHP',        level: 'Dasar',    pct: 0.30, color: '#777bb4', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+  { name: 'Laravel',    level: 'Dasar',    pct: 0.25, color: '#ff2d20', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
 ];
 
 export const projects = [
@@ -134,27 +144,8 @@ export const experiences = [
 ];
 
 export const contacts = [
-  { icon: '@',  label: 'EMAIL',     value: 'fathanfath7@student.ub.ac.id',  href: 'mailto:fathanfath7@student.ub.ac.id' },
-  { icon: 'in', label: 'LINKEDIN',  value: 'Fathan Fathurohman',            href: 'https://www.linkedin.com/in/fathan-fathurohman-338a13321/' },
-  { icon: '{}', label: 'GITHUB',    value: 'fthan77',                       href: 'https://github.com/fthan77' },
-  { icon: 'WA', label: 'WHATSAPP',  value: '081398987825',                  href: 'https://wa.me/6281398987825' },
+  { icon: '@',  label: 'EMAIL',    value: 'fathanfath7@student.ub.ac.id', href: 'mailto:fathanfath7@student.ub.ac.id' },
+  { icon: 'in', label: 'LINKEDIN', value: 'Fathan Fathurohman',           href: 'https://www.linkedin.com/in/fathan-fathurohman-338a13321/' },
+  { icon: '{}', label: 'GITHUB',   value: 'fthan77',                      href: 'https://github.com/fthan77' },
+  { icon: 'WA', label: 'WHATSAPP', value: '081398987825',                 href: 'https://wa.me/6281398987825' },
 ];
-
-export const skills = {
-  id: [
-    { num: "01", title: "Figma",             tag: "UI Design",    desc: "Merancang wireframe, prototipe interaktif, dan desain antarmuka yang bersih dan terstruktur." },
-    { num: "02", title: "Canva",             tag: "Visual Design", desc: "Membuat aset visual, materi presentasi, dan konten desain grafis yang komunikatif." },
-    { num: "03", title: "Kerja Sama Tim",    tag: "Soft Skill",   desc: "Berkolaborasi dalam lingkungan tim yang dinamis, berkontribusi aktif dan mendengarkan perspektif." },
-    { num: "04", title: "Komunikasi Efektif",tag: "Soft Skill",   desc: "Menyampaikan ide desain dengan jelas kepada pemangku kepentingan teknis maupun non-teknis." },
-    { num: "05", title: "Adaptasi Cepat",    tag: "Soft Skill",   desc: "Menyesuaikan diri dengan lingkungan, alat, dan tantangan baru secara cepat dan efisien." },
-    { num: "06", title: "UX Thinking",       tag: "UX Design",    desc: "Berpikir dari sudut pandang pengguna — memastikan setiap keputusan desain berakar pada kebutuhan nyata." },
-  ],
-  en: [
-    { num: "01", title: "Figma",             tag: "UI Design",    desc: "Designing wireframes, interactive prototypes, and clean, structured user interfaces." },
-    { num: "02", title: "Canva",             tag: "Visual Design", desc: "Creating visual assets, presentation materials, and communicative graphic design content." },
-    { num: "03", title: "Teamwork",          tag: "Soft Skill",   desc: "Collaborating in dynamic team environments, actively contributing and listening to perspectives." },
-    { num: "04", title: "Communication",     tag: "Soft Skill",   desc: "Clearly conveying design ideas to both technical and non-technical stakeholders." },
-    { num: "05", title: "Fast Adaptation",   tag: "Soft Skill",   desc: "Quickly adjusting to new environments, tools, and challenges efficiently." },
-    { num: "06", title: "UX Thinking",       tag: "UX Design",    desc: "Thinking from the user's perspective — ensuring every design decision is rooted in real needs." },
-  ],
-};
