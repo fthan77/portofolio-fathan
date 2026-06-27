@@ -62,9 +62,9 @@ export default function Contact() {
               Saya sedang mencari kesempatan magang sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <input name="name" value={form.name} onChange={handleChange} required placeholder="Nama kamu" className={inputClass} />
-              <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Email kamu" className={inputClass} />
-              <textarea name="message" value={form.message} onChange={handleChange} required placeholder="Pesanmu..." rows={5} className={inputClass + " resize-none"} />
+              <input name="name" value={form.name} onChange={handleChange} required placeholder="Nama Anda" className={inputClass} />
+              <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Email Anda" className={inputClass} />
+              <textarea name="message" value={form.message} onChange={handleChange} required placeholder="Pesan Anda.." rows={5} className={inputClass + " resize-none"} />
               <button type="submit" disabled={status === "sending"} className="group relative inline-flex items-center justify-center px-10 py-4 bg-tertiary overflow-hidden transition-all duration-300 disabled:opacity-50">
                 <span className="relative z-10 font-mono text-xs tracking-widest text-white">
                   {status === "sending" ? "MENGIRIM..." : "KIRIM PESAN"}
