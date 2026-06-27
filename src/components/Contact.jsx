@@ -5,8 +5,8 @@ import { contacts } from "../data/content";
 const t = {
   id: {
     section: "// 06 — KONTAK", title: "SAY", titleOutline: "HELLO",
-    desc: "Saya sedang mencari kesempatan magang sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.",
-    name: "Nama kamu", email: "Email kamu", message: "Pesanmu...",
+    desc: "Saya sedang mencari kesempatan magang dan kerja sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.",
+    name: "Nama Anda", email: "Email Anda", message: "Pesan Anda",
     send: "KIRIM PESAN", sending: "MENGIRIM...", sendHover: "KIRIM →",
     cv: "UNDUH CV", success: "✓ PESAN TERKIRIM! TERIMA KASIH.", error: "✗ GAGAL KIRIM. COBA LAGI.",
   },
