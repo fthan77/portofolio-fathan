@@ -26,18 +26,22 @@ export default function Navbar({ lang, setLang }) {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/90 backdrop-blur border-b border-outline-variant py-3">
-      <div className="max-w-5xl mx-auto px-6 md:px-8 flex items-center justify-between relative">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
 
-        {/* Logo */}
-        <a href="#">
-          <img src={logo} alt="FF Logo" style={{ height: 36, width: 36, objectFit: "contain" }} />
+        {/* Logo kiri */}
+        <a href="#" className="flex-shrink-0">
+          <img src={logo} alt="FF Logo" style={{ height: 34, width: 34, objectFit: "contain" }} />
         </a>
 
-        {/* Desktop menu — tengah */}
-        <ul className="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
+        {/* Menu tengah — satu baris, font lebih kecil */}
+        <ul className="hidden md:flex items-center gap-5 absolute left-1/2 -translate-x-1/2">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="font-mono text-xs tracking-widest text-on-surface-variant hover:text-on-surface transition-colors">
+              <a
+                href={l.href}
+                className="font-mono tracking-widest text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                style={{ fontSize: "0.68rem" }}
+              >
                 {l.label}
               </a>
             </li>
@@ -45,15 +49,20 @@ export default function Navbar({ lang, setLang }) {
         </ul>
 
         {/* Kanan — tombol bahasa + HIRE ME */}
-        <div className="hidden md:flex items-center gap-3 z-10">
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0 z-10">
           <button
             onClick={() => setLang(lang === "id" ? "en" : "id")}
-            className="font-mono text-xs tracking-widest border border-outline-variant text-on-surface-variant px-3 py-2 hover:border-tertiary hover:text-tertiary transition-all duration-300"
+            className="font-mono tracking-widest border border-outline-variant text-on-surface-variant px-3 py-1.5 hover:border-tertiary hover:text-tertiary transition-all duration-300"
+            style={{ fontSize: "0.68rem" }}
           >
             {lang === "id" ? "EN" : "ID"}
           </button>
-          <a href="#kontak" className="font-mono text-xs tracking-widest border border-tertiary text-tertiary px-6 py-2 hover:bg-tertiary hover:text-white transition-all duration-300">
-            {lang === "id" ? "HIRE ME" : "HIRE ME"}
+          <a
+            href="#kontak"
+            className="font-mono tracking-widest border border-tertiary text-tertiary px-5 py-1.5 hover:bg-tertiary hover:text-white transition-all duration-300 whitespace-nowrap"
+            style={{ fontSize: "0.68rem" }}
+          >
+            HIRE ME
           </a>
         </div>
 
@@ -70,7 +79,11 @@ export default function Navbar({ lang, setLang }) {
         <ul className="md:hidden flex flex-col gap-5 px-6 py-6 border-t border-outline-variant bg-background">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} onClick={() => setOpen(false)} className="font-mono text-xs tracking-widest text-on-surface-variant hover:text-on-surface">
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="font-mono text-xs tracking-widest text-on-surface-variant hover:text-on-surface"
+              >
                 {l.label}
               </a>
             </li>
@@ -84,7 +97,11 @@ export default function Navbar({ lang, setLang }) {
             </button>
           </li>
           <li>
-            <a href="#kontak" onClick={() => setOpen(false)} className="block text-center font-mono text-xs tracking-widest border border-tertiary text-tertiary px-6 py-2 hover:bg-tertiary hover:text-white transition-all">
+            <a
+              href="#kontak"
+              onClick={() => setOpen(false)}
+              className="block text-center font-mono text-xs tracking-widest border border-tertiary text-tertiary px-6 py-2 hover:bg-tertiary hover:text-white transition-all"
+            >
               HIRE ME
             </a>
           </li>
