@@ -1,35 +1,28 @@
-import logo from "../assets/favicon.png";
-
-const content = {
-  id: { rights: "© 2026 FATHAN FATHUROHMAN. SEMUA HAK DILINDUNGI." },
-  en: { rights: "© 2026 FATHAN FATHUROHMAN. ALL RIGHTS RESERVED." },
+const t = {
+  id: { rights: "© 2025 FATHAN FATHUROHMAN. SEMUA HAK DILINDUNGI.", role: "UI/UX DESIGNER · UNIVERSITAS BRAWIJAYA" },
+  en: { rights: "© 2025 FATHAN FATHUROHMAN. ALL RIGHTS RESERVED.", role: "UI/UX DESIGNER · UNIVERSITAS BRAWIJAYA" },
 };
 
 export default function Footer({ lang }) {
-  const t = content[lang];
+  const tx = t[lang];
   return (
     <footer className="border-t border-outline-variant py-8">
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="FF Logo" style={{ height: 36, width: 36, objectFit: "contain" }} />
-            <p className="font-mono text-xs text-on-surface-variant">FATHAN FATHUROHMAN — UI/UX DESIGNER</p>
+          <div>
+            <span className="font-sans font-bold text-2xl text-on-background tracking-tighter">FF<span className="text-tertiary">.</span></span>
+            <p className="font-mono text-xs text-on-surface-variant mt-1">{tx.role}</p>
           </div>
           <div className="flex gap-8 flex-wrap">
-            {[
-              { label: "GITHUB",   href: "https://github.com/fthan77" },
-              { label: "LINKEDIN", href: "https://www.linkedin.com/in/fathan-fathurohman-338a13321/" },
-              { label: "EMAIL",    href: "mailto:fathanfath7@student.ub.ac.id" },
-            ].map((l) => (
+            {[{ label: "GITHUB", href: "https://github.com/fthan77" }, { label: "LINKEDIN", href: "https://www.linkedin.com/in/fathan-fathurohman-338a13321/" }, { label: "EMAIL", href: "mailto:fathanfath7@student.ub.ac.id" }].map((l) => (
               <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="font-mono text-xs text-on-surface-variant hover:text-tertiary transition-colors flex items-center group">
-                {l.label}
-                <span className="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform">north_east</span>
+                {l.label} <span className="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform">north_east</span>
               </a>
             ))}
           </div>
         </div>
         <div className="mt-8 flex justify-between items-center border-t border-outline-variant pt-4">
-          <span className="font-mono text-xs text-on-surface-variant">{t.rights}</span>
+          <span className="font-mono text-xs text-on-surface-variant">{tx.rights}</span>
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="w-10 h-10 border border-outline-variant flex items-center justify-center hover:bg-tertiary hover:border-tertiary transition-colors">
             <span className="material-symbols-outlined text-sm">expand_less</span>
           </button>
