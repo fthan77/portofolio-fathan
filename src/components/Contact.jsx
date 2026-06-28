@@ -5,8 +5,8 @@ import { contacts } from "../data/content";
 const t = {
   id: {
     section: "// 06 — KONTAK", title: "SAY", titleOutline: "HELLO",
-    desc: "Saya sedang mencari kesempatan magang dan kerja sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.",
-    name: "Nama Anda", email: "Email Anda", message: "Pesan Anda",
+    desc: "Saya sedang mencari kesempatan magang sebagai UI/UX Designer. Jika tertarik untuk berkolaborasi atau ingin mengetahui lebih lanjut, jangan ragu untuk menghubungi saya.",
+    name: "Nama kamu", email: "Email kamu", message: "Pesanmu...",
     send: "KIRIM PESAN", sending: "MENGIRIM...", sendHover: "KIRIM →",
     cv: "UNDUH CV", success: "✓ PESAN TERKIRIM! TERIMA KASIH.", error: "✗ GAGAL KIRIM. COBA LAGI.",
   },
@@ -64,7 +64,7 @@ export default function Contact({ lang }) {
                   <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                   <span className="absolute inset-0 z-20 flex items-center justify-center font-mono text-xs tracking-widest text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">{tx.sendHover}</span>
                 </button>
-                <a href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-4 border border-outline-variant text-on-surface-variant font-mono text-xs tracking-widest hover:border-tertiary hover:text-tertiary transition-all">
+                <a href="https://drive.google.com/uc?export=download&id=1Dzs08e0P9awZ0EiWW5-Hferna2Btf2og" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-4 border border-outline-variant text-on-surface-variant font-mono text-xs tracking-widest hover:border-tertiary hover:text-tertiary transition-all">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                   {tx.cv}
                 </a>

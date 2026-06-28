@@ -86,7 +86,7 @@ export default function Hero({ lang }) {
           <a href="#kontak" className="font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
             {tx.cta2}
           </a>
-          <a href="https://drive.google.com/uc?export=download&id=1qHxhJuD9Ya_HQsMVNTBzDsj3TxBl7vaF" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
+          <a href="https://drive.google.com/uc?export=download&id=1Dzs08e0P9awZ0EiWW5-Hferna2Btf2og" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center font-mono text-xs tracking-widest border border-on-surface-variant text-on-surface-variant px-10 py-4 hover:border-tertiary hover:text-tertiary transition-all duration-300">
             {tx.downloadCV}
           </a>
         </div>
